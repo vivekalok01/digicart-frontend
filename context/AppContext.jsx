@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { dummyProducts } from "../src/assets/assets";
 import toast from "react-hot-toast";
 import axios from "axios";
 
@@ -45,7 +44,7 @@ export const AppContextProvider = ({ children }) => {
       const { data } = await axios.get("/api/user/is-auth");
       if (data.success) {
         setUser(data.user)
-        setCartItems(data.user.cartItems)
+        setCartItems(data?.user?.cartItems)
       } else {
         console.log(data.message)
       }
