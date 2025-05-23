@@ -46,7 +46,7 @@ export const AppContextProvider = ({ children }) => {
         setUser(data.user)
         setCartItems(data?.user?.cartItems)
       } else {
-        console.log(data.message)
+        toast.error(data.message)
       }
     } catch (error) {
       console.log(error)
